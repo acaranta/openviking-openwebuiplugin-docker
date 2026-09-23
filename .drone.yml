@@ -2,11 +2,8 @@ kind: template
 load: docker-build-multiarch.yaml
 data:
   dockerfiledir: .
-  imagename: ai/openviking-openwebui
-  hubimagename: openviking-openwebui
-  giturl: ''
-  gitbranch: ''
-  repotype: both
+  hubimagename: openviking-openwebuiplugin
+  repotype: hub
   imagetag: latest
   branches: ['master', 'main']
   buildarch: linux/amd64,linux/arm64/v8

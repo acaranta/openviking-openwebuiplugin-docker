@@ -1,6 +1,6 @@
 services:
   openviking-openwebui:
-    image: acaranta/openviking-openwebui:latest
+    image: acaranta/openviking-openwebuiplugin:latest
     build:
       context: .
       args:

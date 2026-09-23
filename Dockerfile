@@ -38,7 +38,7 @@ RUN /opt/venv/bin/pip install ".[test]" \
 FROM python:${PYTHON_VERSION}-slim AS runtime
 ARG OV_REF=main
 
-LABEL org.opencontainers.image.title="openviking-openwebui" \
+LABEL org.opencontainers.image.title="openviking-openwebuiplugin" \
       org.opencontainers.image.description="OpenViking OpenAPI tool server for Open WebUI" \
       org.opencontainers.image.source="https://github.com/volcengine/OpenViking/tree/main/examples/openwebui-plugin" \
       org.opencontainers.image.licenses="AGPL-3.0" \

@@ -1,4 +1,4 @@
-# openviking-openwebui (Docker)
+# openviking-openwebuiplugin (Docker)
 
 Docker image for the [OpenViking Open WebUI tool server](https://github.com/volcengine/OpenViking/tree/main/examples/openwebui-plugin):
 a small FastAPI server that exposes a curated set of OpenViking endpoints
@@ -12,10 +12,10 @@ upstream at build time.
 ## Build
 
 ```bash
-docker build -t openviking-openwebui .
+docker build -t openviking-openwebuiplugin .
 
 # Pin to an upstream branch, tag or commit
-docker build --build-arg OV_REF=03391bae4335eacf440a62d942f3951de6a63cbe -t openviking-openwebui .
+docker build --build-arg OV_REF=03391bae4335eacf440a62d942f3951de6a63cbe -t openviking-openwebuiplugin .
 
 # Run the upstream test suite inside the build
 docker build --target test .
@@ -43,7 +43,7 @@ Or without compose:
 ```bash
 docker run -d --name openviking-openwebui -p 127.0.0.1:8765:8765 \
   -e OV_ENDPOINT=http://openviking:1933 -e OV_API_KEY=... \
-  acaranta/openviking-openwebui
+  acaranta/openviking-openwebuiplugin
 ```
 
 Then in Open WebUI, go to **Settings → Tools → Add Tool Server** and enter
@@ -77,8 +77,8 @@ authenticating proxy in front of it. The container runs as a non-root user.
 ## CI
 
 `.drone.yml` uses the `docker-build-multiarch.yaml` Drone template and builds
-`linux/amd64` and `linux/arm64/v8`. It pushes to both the private registry
-(`ai/openviking-openwebui`) and Docker Hub (`openviking-openwebui`).
+`linux/amd64` and `linux/arm64/v8`. It pushes to Docker Hub as
+[`acaranta/openviking-openwebuiplugin`](https://hub.docker.com/r/acaranta/openviking-openwebuiplugin).
 
 ## License
 
