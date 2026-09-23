@@ -33,7 +33,7 @@ inside the image.
 ## Run
 
 ```bash
-cp .env.example .env   # then set OV_ENDPOINT / OV_API_KEY
+# edit the environment: section of docker-compose.yml (OV_ENDPOINT, OV_API_KEY, ...)
 docker compose up -d
 curl http://localhost:8765/health
 ```

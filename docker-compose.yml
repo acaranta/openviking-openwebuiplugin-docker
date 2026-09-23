@@ -7,7 +7,16 @@ services:
         OV_REF: main
     container_name: openviking-openwebui
     restart: unless-stopped
-    env_file: .env
+    environment:
+      # OpenViking server base URL (reachable from the container)
+      OV_ENDPOINT: http://openviking:1933
+      # Bearer token for OpenViking - do not commit a real value
+      OV_API_KEY: ""
+      OV_ACCOUNT: default
+      OV_USER: default
+      OV_AGENT: default
+      OV_BIND: 0.0.0.0:8765
+      OV_TIMEOUT: "30"
     ports:
       # The tool server has no auth of its own: keep it on localhost or a
       # private network, or put an authenticating proxy in front of it.
