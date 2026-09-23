@@ -82,5 +82,7 @@ authenticating proxy in front of it. The container runs as a non-root user.
 
 ## License
 
-The upstream plugin is AGPL-3.0 (© Beijing Volcano Engine Technology Co., Ltd.),
-and so is the image built from it.
+[AGPL-3.0](LICENSE), matching the upstream
+[OpenViking](https://github.com/volcengine/OpenViking) repository. The
+plugin code built into the image is © Beijing Volcano Engine Technology
+Co., Ltd., licensed under AGPL-3.0.
