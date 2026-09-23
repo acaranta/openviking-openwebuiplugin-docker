@@ -1,0 +1,14 @@
+services:
+  openviking-openwebui:
+    image: acaranta/openviking-openwebui:latest
+    build:
+      context: .
+      args:
+        OV_REF: main
+    container_name: openviking-openwebui
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # The tool server has no auth of its own: keep it on localhost or a
+      # private network, or put an authenticating proxy in front of it.
+      - "127.0.0.1:8765:8765"
